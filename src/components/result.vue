@@ -38,7 +38,6 @@
          }
       },
       mounted() {
-         console.log("mounting");
          if (this.item.id.hasOwnProperty("videoId")) {
             this.$store.dispatch("getVideoInfo", this.item.id.videoId);
          }

@@ -14,7 +14,6 @@ export const search = ({state}, query) => {
    })
       .then((response) => {
          state.items = response.data.items;
-         console.log(response.data);
       }).catch((err) => {
          console.log(err.data);
    });
@@ -32,9 +31,7 @@ export const getVideoInfo = ({state}, videoId) => {
       }
    })
       .then((response) => {
-         console.log(response.data);
          Vue.set(state.videosInfo, videoId, response.data);
-         // state.videosInfo[videoId] = response.data;
       }).catch((err) => {
          console.log(err);
    });

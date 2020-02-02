@@ -25,7 +25,7 @@
       name: "layout",
       components: {Result, PageHeader},
       mounted() {
-         this.$store.dispatch("search", "spongebob");
+         // this.$store.dispatch("search", "spongebob");
          loadProgressBar()
       },
       computed: {
