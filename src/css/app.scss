@@ -3,8 +3,19 @@ body, html {
 }
 .search-main-page {
     background-color: #F9F9F9;
-    overflow: auto;
-    height: 1000px;
+    overflow: hidden;
+    //height: 1000px;
+}
+#loading-bar {
+  height: 2px;
+  width: 0;
+  background: red;
+  position: fixed;
+  z-index: 2;
+  transition: width 2s;
+  .loading {
+    width: 100%;
+  }
 }
 
 @import "header";
