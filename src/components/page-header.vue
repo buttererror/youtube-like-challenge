@@ -1,7 +1,9 @@
 <template>
      <header class="heading">
-          <yotube-logo></yotube-logo>
-          <input-search></input-search>
+          <div class="heading__container">
+               <yotube-logo></yotube-logo>
+               <input-search></input-search>
+          </div>
      </header>
 
 </template>

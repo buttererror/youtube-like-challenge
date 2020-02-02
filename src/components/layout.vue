@@ -2,7 +2,12 @@
      <main class="search-main-page">
           <page-header></page-header>
           <div class="results" v-if="items">
-               <div class="results__header"></div>
+               <div class="results__header">
+                    <div class="results__count">About 1000000 results</div>
+                    <div class="results__filter">
+                         <i class="material-icons">filter_list</i>
+                    </div>
+               </div>
                <div class="results__group">
                     <result
                               v-for="(item, index) in items"
