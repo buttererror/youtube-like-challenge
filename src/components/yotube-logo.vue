@@ -1,5 +1,5 @@
 <template>
-     <div id="logo-icon-container" class="yt-icon-container">
+     <div id="logo-icon-container" class="heading__icon-container">
           <svg viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet" focusable="false"
                style="pointer-events: none; display: block; width: 100%; height: 100%;">
                <g viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
@@ -10,7 +10,7 @@
             S64.31,19.77,63,14.87z"></path>
                          <polygon fill="#FFFFFF" points="26.6,39.43 42.93,30 26.6,20.57"></polygon>
                     </g>
-                    <g class="">
+                    <g>
                          <g id="youtube-paths">
                               <path fill="#282828" d="M92.69,48.03c-1.24-0.84-2.13-2.14-2.65-3.91c-0.52-1.77-0.79-4.12-0.79-7.06v-4
               c0-2.97,0.3-5.35,0.9-7.15c0.6-1.8,1.54-3.11,2.81-3.93c1.27-0.82,2.94-1.24,5.01-1.24c2.04,0,3.67,0.42,4.9,1.26

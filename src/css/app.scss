@@ -1,10 +1,11 @@
 body, html {
     margin: 0;
 }
-.main {
+.search-main-page {
     background-color: #F9F9F9;
     overflow: auto;
     height: 1000px;
 }
 
 @import "header";
+@import "results";

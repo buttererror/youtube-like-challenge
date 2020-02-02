@@ -4,13 +4,40 @@
   width: 100%;
   background-color: #fff;
   display: flex;
-
+  .heading__input-container {
+    display: flex;
+    width: 604px;
+    text-align: left;
+    margin: auto 0;
+    margin-left: 2%;
+    .heading__input {
+      width: 80%;
+      height: 38px;
+      padding: 2px;
+      font-size: 20px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid #969696;
+    }
+    .heading__input__button {
+      padding: 0 24px;
+      background: #F9F9FB;
+      height: 38px;
+      margin: auto 0;
+      border: 1px solid #969696;
+      border-left: 0;
+      i {
+        color: grey;
+      }
+    }
+  }
 }
-#logo-icon-container.yt-icon-container {
+#logo-icon-container.heading__icon-container {
   width: 80px;
   height: 24px;
   -ms-flex: none;
   -webkit-flex: none;
   flex: none;
   margin: auto 0;
+  margin-left: 27%;
 }
