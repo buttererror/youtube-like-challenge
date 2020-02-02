@@ -1,9 +1,10 @@
+$white: #fff;
 .heading {
   z-index: 2;
   position: fixed;
   height: 60px;
   width: 100%;
-  background-color: #fff;
+  background-color:$white;
   .heading__container {
     display: flex;
     width: 50%;
