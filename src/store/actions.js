@@ -20,7 +20,6 @@ export const search = ({state}, query) => {
 };
 
 export const getVideoInfo = ({state}, videoId) => {
-   console.log(videoId)
    axios({
       method: "get",
       url: "https://www.googleapis.com/youtube/v3/videos",
@@ -35,4 +34,22 @@ export const getVideoInfo = ({state}, videoId) => {
       }).catch((err) => {
          console.log(err);
    });
+};
+
+export const getChannelInfo = ({state}, channelId) => {
+   axios({
+      method: "get",
+      url: "https://www.googleapis.com/youtube/v3/channels",
+      params: {
+         part: "snippet,contentDetails,statistics",
+         id: channelId,
+         key: apiKey
+      }
+   })
+      .then((response) => {
+         Vue.set(state.channelsInfo, channelId, response.data);
+      }).catch((err) => {
+      console.log(err);
+   });
+
 };
