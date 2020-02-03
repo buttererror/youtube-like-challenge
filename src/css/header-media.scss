@@ -14,13 +14,32 @@
       }
 
       .heading__input-container {
-        .heading__input__button {
+        .heading__input {
+          display: none;
+        }
+        .heading__input--show {
+          display: block!important;
+        }
+        span.close {
+          display: none;
+          position: absolute;
+          right: 75px;
+          top: 50%;
+          transform: translateY(-50%);
+          i {
+            color: #000;
+            font-size: 20px;
+          }
+        }
+        .heading__input__button--mobile {
+          padding: 0 24px;
+          height: 38px;
+          margin: auto 0;
           background: transparent;
           border: 0;
           -webkit-appearance: none;
           outline: none;
           cursor: pointer;
-
           i {
             color: #fff;
           }

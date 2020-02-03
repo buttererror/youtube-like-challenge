@@ -54,27 +54,17 @@
         border: 1px solid #969696;
       }
 
-      .heading__input__button {
+      .heading__input__button--desktop {
         padding: 0 24px;
         background: #F9F9FB;
         height: 38px;
         margin: auto 0;
         border: 1px solid #969696;
         border-left: 0;
-        @media (max-width: $breakpoint-mobile) {
-          background: transparent;
-          border: 0;
-          -webkit-appearance: none;
-          outline: none;
-          cursor: pointer;
-        }
-
         i {
           color: grey;
-          @media (max-width: $breakpoint-mobile) {
-            color: #fff;
-          }
         }
+
       }
     }
 
