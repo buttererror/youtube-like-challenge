@@ -13,6 +13,7 @@ export default {
      Layout
   },
    mounted() {
+     this.windowWidth = window.innerWidth;
       window.addEventListener("resize", (e) => {
          this.windowWidth = e.target.innerWidth;
       });

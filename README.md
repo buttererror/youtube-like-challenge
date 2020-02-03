@@ -4,6 +4,8 @@
 ```
 npm install
 ```
+* Modify the value of fake_results in env.js to false value to make live requests to the youTube api.
+
 
 ### Compiles and hot-reloads for development
 ```
