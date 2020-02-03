@@ -11,7 +11,22 @@ export default {
   name: 'app',
   components: {
      Layout
-  }
+  },
+   mounted() {
+      window.addEventListener("resize", (e) => {
+         this.windowWidth = e.target.innerWidth;
+      });
+   },
+   computed: {
+     windowWidth: {
+        get() {
+           return this.$store.state.windowWidth;
+        },
+        set(width) {
+           this.$store.commit("updateWindowWidth", width);
+        }
+     }
+   }
 }
 </script>
 

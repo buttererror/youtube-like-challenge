@@ -1,11 +1,12 @@
 <template>
      <div class="heading__input-container">
-          <input type="text" :class="{'heading__input': true, 'heading__input--show': displayInput}" v-model="searchQuery" @keyup.enter="search">
+          <input type="text" :class="{'heading__input': true, 'heading__input--show': displayInput}"
+                 v-model="searchQuery" @keyup.enter="search">
           <span :class="{'heading__input--show': displayInput, 'close': true}">
                <a href="#" @click.prevent="displayInput = false"><i class="material-icons">close</i></a>
           </span>
-          <button   v-if="windowWidth > 630"
-                    class="heading__input__button--desktop"
+          <button v-if="windowWidth > 630"
+                  class="heading__input__button--desktop"
                   @click.prevent="search"><i class="material-icons">
                search</i>
           </button>
@@ -19,16 +20,9 @@
    export default {
       name: "input-search",
       data() {
-        return {
-           windowWidth: null,
-           displayInput: false
-        }
-      },
-      mounted() {
-         window.addEventListener("resize", (e) => {
-            this.windowWidth = e.target.innerWidth;
-            console.log("changing", e);
-         });
+         return {
+            displayInput: false
+         }
       },
       computed: {
          searchQuery: {
@@ -38,14 +32,21 @@
             set(q) {
                this.$store.commit("updateSearchQuery", q);
             }
-
-         }
+         },
+         windowWidth: {
+            get() {
+               return this.$store.state.windowWidth;
+            },
+            set(width) {
+               this.$store.commit("updateWindowWidth", width);
+            }
+         },
       },
       methods: {
          search() {
             this.$store.dispatch("search", this.searchQuery);
          }
-         },
+      },
    }
 </script>
 

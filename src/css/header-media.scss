@@ -20,17 +20,6 @@
         .heading__input--show {
           display: block!important;
         }
-        span.close {
-          display: none;
-          position: absolute;
-          right: 75px;
-          top: 50%;
-          transform: translateY(-50%);
-          i {
-            color: #000;
-            font-size: 20px;
-          }
-        }
         .heading__input__button--mobile {
           padding: 0 24px;
           height: 38px;

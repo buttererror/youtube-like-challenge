@@ -3,6 +3,7 @@ export default {
    totalResults: null,
    videosInfo: {},
    channelsInfo: {},
-   searchQuery: null
+   searchQuery: null,
+   windowWidth: null
 
 }
