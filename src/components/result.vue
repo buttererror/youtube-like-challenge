@@ -12,11 +12,11 @@
                <div class="result__info__subtitle">
                     <p class="align-content">
                          {{videosInfo[item.id.videoId].items[0].snippet.channelTitle}}</p>
-                    <div class="dot-separator">&#8226;</div>
+                    <div class="dot-separator" v-if="windowWidth > 630">&#8226;</div>
                     <p class="align-content">{{videosInfo[item.id.videoId].items[0].statistics.viewCount |
                          changeCountExpression}}</p>
-                    <div class="dot-separator">&#8226;</div>
-                    <p class="align-content">{{videosInfo[item.id.videoId].items[0].snippet.publishedAt |
+                    <div class="dot-separator" v-if="windowWidth > 630">&#8226;</div>
+                    <p class="align-content" v-if="windowWidth > 630">{{videosInfo[item.id.videoId].items[0].snippet.publishedAt |
                          publishPeriod}}</p>
                </div>
                <div class="result__info__description">
@@ -37,9 +37,9 @@
                     <p class="align-content">
                          {{channelsInfo[item.id.channelId].items[0].statistics.subscriberCount | changeCountExpression}} subscribers
                     </p>
-                    <div class="dot-separator">&#8226;</div>
+                    <div class="dot-separator" v-if="windowWidth > 630">&#8226;</div>
                </div>
-               <div class="result__info__description">
+               <div class="result__info__description" v-if="windowWidth > 630">
                     <p>{{item.snippet.description}}</p>
                </div>
           </div>
@@ -70,7 +70,10 @@
          ...mapState({
             videosInfo: state => state.videosInfo,
             channelsInfo: state => state.channelsInfo
-         })
+         }),
+         windowWidth() {
+            return this.$store.state.windowWidth;
+         }
       },
       filters: {
          changeCountExpression(count) {

@@ -34,6 +34,8 @@
             display: none;
           }
           .result__info__subtitle {
+            flex-direction: column;
+            text-align: left;
           }
         }
       }

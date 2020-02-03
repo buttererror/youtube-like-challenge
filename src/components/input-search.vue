@@ -33,13 +33,8 @@
                this.$store.commit("updateSearchQuery", q);
             }
          },
-         windowWidth: {
-            get() {
-               return this.$store.state.windowWidth;
-            },
-            set(width) {
-               this.$store.commit("updateWindowWidth", width);
-            }
+         windowWidth() {
+            return this.$store.state.windowWidth;
          },
       },
       methods: {
