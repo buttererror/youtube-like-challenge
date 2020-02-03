@@ -8,16 +8,10 @@
     margin-bottom: 19px;
     padding: 15px 0;
     border-bottom: 1px solid #ded9d9;
-    @media (max-width: $breakpoint-tablet) {
-      @include tablet-width;
-    }
   }
   .results__group {
     transform: translateX(50%);
     width: 50%;
-    @media (max-width: $breakpoint-tablet) {
-      @include tablet-width;
-    }
     .result {
       display: flex;
       justify-content: center;
