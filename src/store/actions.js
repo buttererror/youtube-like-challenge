@@ -16,6 +16,7 @@ export const search = ({state}, query) => {
    }
    if(state.windowWidth <= 630) state.isLoading = true;
    else NProgress.start();
+   state.items = [];
    axios({
       method: "get",
       url: "https://www.googleapis.com/youtube/v3/search",
