@@ -1,15 +1,18 @@
 <template>
   <div id="app">
        <layout></layout>
+       <mobile-loader v-if="windowWidth <= 630"></mobile-loader>
   </div>
 </template>
 
 <script>
 
 import Layout from "./components/layout";
+import MobileLoader from "./components/mobile-loader";
 export default {
   name: 'app',
   components: {
+     MobileLoader,
      Layout
   },
    mounted() {

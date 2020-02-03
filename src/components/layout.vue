@@ -24,18 +24,15 @@
    import PageHeader from "./page-header";
    import Result from "./result";
    import {mapState} from 'vuex';
-   import { loadProgressBar } from 'axios-progress-bar'
 
    export default {
       name: "layout",
       components: {Result, PageHeader},
-      mounted() {
-         loadProgressBar()
-      },
       computed: {
          ...mapState({
             items: state => state.items,
-            totalResults: state => state.totalResults
+            totalResults: state => state.totalResults,
+            windowWidth: state => state.windowWidth
          })
       }
    }

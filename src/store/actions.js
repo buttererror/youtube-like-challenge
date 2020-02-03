@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import NProgress from 'nprogress';
 import searchResponse from '../staticData/search-reponse';
 import videoInfoResponse from '../staticData/videoInfo-response';
 import channelInfoResponse from '../staticData/channelInfo-response';
@@ -13,6 +14,8 @@ export const search = ({state}, query) => {
       state.totalResults = data.pageInfo.totalResults;
       return;
    }
+   if(state.windowWidth <= 630) state.isLoading = true;
+   else NProgress.start();
    axios({
       method: "get",
       url: "https://www.googleapis.com/youtube/v3/search",
@@ -25,7 +28,9 @@ export const search = ({state}, query) => {
    })
       .then((response) => {
          state.items = response.data.items;
-         state.resultsCount = response.data.pageInfo.totalResults
+         state.resultsCount = response.data.pageInfo.totalResults;
+         if(state.windowWidth <= 630) state.isLoading = false;
+         else NProgress.done();
       }).catch((err) => {
          console.log(err.data);
    });

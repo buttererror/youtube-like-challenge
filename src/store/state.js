@@ -4,6 +4,7 @@ export default {
    videosInfo: {},
    channelsInfo: {},
    searchQuery: null,
-   windowWidth: null
+   windowWidth: null,
+   isLoading: false
 
 }
