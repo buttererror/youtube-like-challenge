@@ -6,8 +6,7 @@
 
           </div>
           <div class="result__info">
-               <h1 class="result__info__title">
-                    {{item.snippet.title}}
+               <h1 class="result__info__title" v-html="item.snippet.title">
                </h1>
                <div class="result__info__subtitle">
                     <p class="align-content">
@@ -30,8 +29,7 @@
                <img :src="item.snippet.thumbnails.medium.url" class="result__image--default" width="180" height="180">
           </div>
           <div class="result__info">
-               <h1 class="result__info__title">
-                    {{item.snippet.title}}
+               <h1 class="result__info__title"  v-html="item.snippet.title">
                </h1>
                <div class="result__info__subtitle">
                     <p class="align-content">

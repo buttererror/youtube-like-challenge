@@ -1,3 +1,3 @@
 export default {
-   fake_results: true
+   fake_results: false
 }

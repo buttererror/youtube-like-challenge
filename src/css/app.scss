@@ -1,25 +1,16 @@
-body, html {
-    margin: 0;
-}
-.search-main-page {
-    background-color: #F9F9F9;
-    overflow: hidden;
-    //height: 1000px;
-}
-#loading-bar {
-  height: 2px;
-  width: 0;
-  background: red;
-  position: fixed;
-  z-index: 2;
-  transition: width 2s;
-  .loading {
-    width: 100%;
-  }
-}
 @import "_variables";
 @import "_mixins";
 @import "header";
 @import "header-media";
 @import "results";
 @import "results-media";
+body, html {
+    margin: 0;
+}
+.search-main-page {
+    background-color: #F9F9F9;
+    overflow: hidden;
+}
+#nprogress .bar {
+  background: $red !important;
+}
