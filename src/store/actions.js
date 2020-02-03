@@ -8,7 +8,7 @@ export const search = ({state}, query) => {
    state.query = query;
    let data = searchResponse;
    state.items = data.items;
-   state.resultsCount = data.pageInfo.totalResults;
+   state.totalResults = data.pageInfo.totalResults;
    // axios({
    //    method: "get",
    //    url: "https://www.googleapis.com/youtube/v3/search",

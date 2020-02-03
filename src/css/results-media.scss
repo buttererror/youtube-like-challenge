@@ -1,0 +1,43 @@
+@media (max-width: $breakpoint-tablet) {
+  .results {
+    .results__header {
+      @include tablet-width;
+    }
+
+    .results__group {
+        @include tablet-width;
+    }
+  }
+  .dot-separator {
+    margin: 0 4px;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .dot-separator {
+    //display: none;
+  }
+  .results {
+    margin-top: 5px;
+    .results__group {
+      .result {
+        .result__img {
+          min-width: 265px;
+          .result__image--contain {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .result__info {
+          .result__info__title {
+          }
+          .result__info__description {
+            display: none;
+          }
+          .result__info__subtitle {
+          }
+        }
+      }
+
+    }
+  }
+}

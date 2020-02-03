@@ -8,16 +8,22 @@
     margin-bottom: 19px;
     padding: 15px 0;
     border-bottom: 1px solid #ded9d9;
+    @media (max-width: $breakpoint-tablet) {
+      @include tablet-width;
+    }
   }
   .results__group {
     transform: translateX(50%);
     width: 50%;
+    @media (max-width: $breakpoint-tablet) {
+      @include tablet-width;
+    }
     .result {
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
       .result__img {
-        min-height: 180px;
+        height: 180px;
         min-width: 320px;
         position: relative;
         p {
@@ -46,6 +52,7 @@
           margin-bottom: 0;
         }
         .result__info__description {
+          display: initial;
           color: grey;
           text-align: left;
           font-weight: 200;
@@ -65,5 +72,6 @@
 
 }
 .dot-separator {
+  display: initial;
   margin: 0 4px;
 }

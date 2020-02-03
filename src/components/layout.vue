@@ -3,7 +3,7 @@
           <page-header></page-header>
           <div class="results" v-if="items">
                <div class="results__header">
-                    <div class="results__count">About 1000000 results</div>
+                    <div class="results__count">{{totalResults}} results</div>
                     <div class="results__filter">
                          <i class="material-icons">filter_list</i>
                     </div>

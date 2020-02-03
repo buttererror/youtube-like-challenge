@@ -1,7 +1,7 @@
 <template>
      <div class="result" v-if="item.id.kind === 'youtube#video' && videosInfo.hasOwnProperty(item.id.videoId)">
           <div class="result__img">
-               <img :src="item.snippet.thumbnails.medium.url">
+               <img :src="item.snippet.thumbnails.medium.url" class="result__image--contain">
                <p>{{videosInfo[item.id.videoId].items[0].contentDetails.duration | formatDuration}}</p>
 
           </div>
@@ -27,7 +27,7 @@
      </div>
      <div class="result" v-else-if="item.id.kind === 'youtube#channel' && channelsInfo.hasOwnProperty(item.id.channelId)">
           <div class="result__img">
-               <img :src="item.snippet.thumbnails.medium.url" width="180" height="180">
+               <img :src="item.snippet.thumbnails.medium.url" class="result__image--default" width="180" height="180">
           </div>
           <div class="result__info">
                <h1 class="result__info__title">

@@ -17,6 +17,9 @@ body, html {
     width: 100%;
   }
 }
-
+@import "_variables";
+@import "_mixins";
 @import "header";
+@import "header-media";
 @import "results";
+@import "results-media";

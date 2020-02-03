@@ -1,0 +1,39 @@
+@media (max-width: $breakpoint-mobile) {
+  .heading {
+    position: relative;
+    background-color: $red;
+    .heading__container {
+      .heading__logo {
+        display: none;
+      }
+
+      .heading__icon__container {
+        display: block;
+        width: 100px;
+        height: 60px;
+      }
+
+      .heading__input-container {
+        .heading__input__button {
+          background: transparent;
+          border: 0;
+          -webkit-appearance: none;
+          outline: none;
+          cursor: pointer;
+
+          i {
+            color: #fff;
+          }
+        }
+      }
+
+    }
+  }
+}
+@media (max-width: $breakpoint-tablet) {
+  .heading {
+    .heading__container {
+      @include tablet-width;
+    }
+  }
+}
