@@ -20,11 +20,15 @@
         .result__img {
           min-width: 170px;
           height: 130px;
-          .result__image--default {
+          .result__image--channel {
             width: 130px;
             height: 130px;
           }
-          .result__image--contain {
+          .result__image--video {
+            width: 100%;
+            height: 100%;
+          }
+          .result__image--playlist {
             width: 100%;
             height: 100%;
           }
@@ -55,7 +59,11 @@
       .result {
         .result__img {
           min-width: 265px;
-          .result__image--contain {
+          .result__image--video {
+            width: 100%;
+            height: 100%;
+          }
+          .result__image--playlist {
             width: 100%;
             height: 100%;
           }

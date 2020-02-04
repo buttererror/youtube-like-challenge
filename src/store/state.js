@@ -5,6 +5,7 @@ export default {
    channelsInfo: {},
    searchQuery: null,
    windowWidth: null,
-   isLoading: false
+   isLoading: false,
+   playlistsInfo: {}
 
 }

@@ -3,6 +3,7 @@ import NProgress from 'nprogress';
 import searchResponse from '../staticData/search-reponse';
 import videoInfoResponse from '../staticData/videoInfo-response';
 import channelInfoResponse from '../staticData/channelInfo-response';
+import playlistInfoResponse from '../staticData/playlistInfo-reponse';
 import env from '../env';
 const axios = require('axios');
 const apiKey = "AIzaSyAME272kfYP4VjfTJ4Ulwf4wEkIbnpGFvM";
@@ -80,4 +81,38 @@ export const getChannelInfo = ({state}, channelId) => {
       console.log(err);
    });
 
+};
+
+export const getPlaylistsInfo = ({state}, {playlistId, channelId}) => {
+   if(env.fake_results) {
+      let data = playlistInfoResponse;
+      console.log(data[channelId].items)
+      console.log(playlistId)
+      data[channelId].items.forEach((item) => {
+         if(item.id === playlistId) {
+            console.log(item)
+            Vue.set(state.playlistsInfo, playlistId, item);
+            console.log(state.playlistsInfo)
+         }
+      });
+      return;
+   }
+   axios({
+      method: "get",
+      url: "https://www.googleapis.com/youtube/v3/playlists",
+      params: {
+         part: "snippet,contentDetails",
+         id: channelId,
+         key: apiKey
+      }
+   })
+      .then((response) => {
+         response.data.items.forEach((item) => {
+            if(item.id === playlistId) {
+               Vue.set(state.playlistsInfo, playlistId, item);
+            }
+         });
+      }).catch((err) => {
+      console.log(err);
+   });
 };

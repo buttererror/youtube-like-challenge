@@ -14,12 +14,39 @@
     width: 50%;
     .result {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       margin-bottom: 20px;
       .result__img {
         height: 180px;
         min-width: 320px;
         position: relative;
+        .result__image__overlay {
+          position: absolute;
+          background-color: black;
+          width: 50%;
+          height: 100%;
+          top: 0;
+          opacity: .7;
+          right: 0;
+        }
+        .result__image__playlist-icon {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          right: 25%;
+          top: 50%;
+          transform: translate(25%, -50%);
+          span {
+            align-self: center;
+            width: 22px;
+            color: $white;
+          }
+          i {
+            color: $white;
+            font-size: 27px;
+          }
+        }
+
         p {
           display: block;
           position: absolute;
