@@ -18,10 +18,11 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Notes
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* The results is not clickable as it's not one of the required tasks.
+* The results returned from the api is limited to 25 results, there's no load more results.
+* Mobile filters, I chose to do it as same as desktop.
+* Due to limited time given work and studies, I didn't use `Flux Arch`.
+* Of course to reach with the ui exactly the same as the given photos, time needed.
+ 
