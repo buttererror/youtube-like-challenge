@@ -4,6 +4,7 @@
 ```
 npm install
 ```
+* Add env.js with env.js.example content
 * Modify the value of fake_results in env.js to false value to make live requests to the youTube api.
 
 
