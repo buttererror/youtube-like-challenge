@@ -1,7 +1,9 @@
 <template>
      <div class="card" v-if="item.id.kind === 'youtube#video' && videosInfo.hasOwnProperty(item.id.videoId)">
           <div class="card__img">
-               <img :src="item.snippet.thumbnails.medium.url" class="image image-video">
+               <a href="#" @click.prevent="goToVideoPage">
+                    <img :src="item.snippet.thumbnails.medium.url" class="image image-video">
+               </a>
                <p class="overlay overlay-time">{{videosInfo[item.id.videoId].items[0].contentDetails.duration | formatDuration}}</p>
 
           </div>
@@ -68,7 +70,7 @@
 </template>
 
 <script>
-   import {mapState} from 'vuex';
+   import {mapState, mapActions} from 'vuex';
 
    export default {
       name: "result",
@@ -79,11 +81,11 @@
       },
       mounted() {
          if (this.item.id.kind === "youtube#video") {
-            this.$store.dispatch("getVideoInfo", this.item.id.videoId);
+            this.getVideoInfo(this.item.id.videoId);
          }else if(this.item.id.kind === "youtube#channel"){
-            this.$store.dispatch("getChannelInfo", this.item.id.channelId);
+            this.getChannelInfo(this.item.id.channelId);
          }else if (this.item.id.kind === "youtube#playlist") {
-            this.$store.dispatch("getPlaylistsInfo", {
+            this.getPlaylistsInfo({
                channelId: this.item.snippet.channelId,
                playlistId: this.item.id.playlistId
             });
@@ -92,9 +94,9 @@
       },
       computed: {
          ...mapState({
-            videosInfo: state => state.videosInfo,
-            channelsInfo: state => state.channelsInfo,
-            playlistsInfo: state => state.playlistsInfo
+            videosInfo: state => state._results.videosInfo,
+            channelsInfo: state => state._results.channelsInfo,
+            playlistsInfo: state => state._results.playlistsInfo
          }),
          windowWidth() {
             return this.$store.state.windowWidth;
@@ -127,6 +129,16 @@
                "0" + window.moment.duration(duration)._data.seconds :
                window.moment.duration(duration)._data.seconds;
             return parseInt(hours) ? hours + ":" : '' + minutes + ":" + seconds;
+         }
+      },
+      methods: {
+         ...mapActions({
+            getVideoInfo: "_results/getVideoInfo",
+            getChannelInfo: "_results/getChannelInfo",
+            getPlaylistsInfo: "_results/getPlaylistsInfo"
+         }),
+         goToVideoPage() {
+            // this.$router.push({name: "video_page"})
          }
       }
    }

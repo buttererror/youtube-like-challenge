@@ -4,7 +4,14 @@ const routes = [
    {
       path: "/",
       name: "results",
-      component: Results
+      component: Results,
+      children: [
+         {
+            path: "video",
+            name: "video_page",
+            // component: ""
+         }
+      ]
    }
 ]
 

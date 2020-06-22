@@ -8,9 +8,15 @@ import * as getters from './getters';
 import * as mutations from './mutations';
 import * as actions from './actions';
 
+//MODULES
+import ResultsStore from "../../src/pages/Results/store";
+
 export default new Vuex.Store({
    state,
    getters,
    mutations,
-   actions
+   actions,
+   modules: {
+      _results: ResultsStore
+   }
 });
