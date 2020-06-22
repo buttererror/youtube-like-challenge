@@ -1,0 +1,5 @@
+@media (max-width: $breakpoint-mobile) {
+  .input-is-visible, .icon-is-visible {
+    display: block !important;
+  }
+}

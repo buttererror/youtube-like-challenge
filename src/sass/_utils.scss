@@ -1,0 +1,31 @@
+.absolute-center {
+  position: absolute;
+  right: 25%;
+  top: 50%;
+  transform: translate(25%, -50%);
+}
+
+.center {
+  transform: translateX(50%);
+  width: 50%;
+
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.dot-separator {
+  display: initial;
+  margin: 0 4px;
+}
+@media (max-width: $breakpoint-tablet) {
+  .dot-separator {
+    margin: 0 4px;
+  }
+}
+
+.align-content {
+  margin: 0;
+}

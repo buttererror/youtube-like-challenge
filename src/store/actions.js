@@ -4,11 +4,11 @@ import searchResponse from '../staticData/search-reponse';
 import videoInfoResponse from '../staticData/videoInfo-response';
 import channelInfoResponse from '../staticData/channelInfo-response';
 import playlistInfoResponse from '../staticData/playlistInfo-reponse';
-import env from '../env';
+let isFakeResults = process.env.VUE_APP_FAKE_RESULTS;
 const axios = require('axios');
-const apiKey = "AIzaSyAME272kfYP4VjfTJ4Ulwf4wEkIbnpGFvM";
+const apiKey = process.env.VUE_APP_YOUTUBE_API_KEY;
 export const search = ({state}, query) => {
-   if(env.fake_results) {
+   if(isFakeResults == 'true') {
       state.query = query;
       let data = searchResponse;
       state.items = data.items;
@@ -39,7 +39,7 @@ export const search = ({state}, query) => {
 };
 
 export const getVideoInfo = ({state}, videoId) => {
-   if(env.fake_results) {
+   if(isFakeResults == 'true') {
       let data = videoInfoResponse;
       Vue.set(state.videosInfo, videoId, data[videoId]);
       return;
@@ -61,7 +61,7 @@ export const getVideoInfo = ({state}, videoId) => {
 };
 
 export const getChannelInfo = ({state}, channelId) => {
-   if(env.fake_results) {
+   if(isFakeResults == 'true') {
       let data = channelInfoResponse;
       Vue.set(state.channelsInfo, channelId, data[channelId]);
       return;
@@ -84,7 +84,7 @@ export const getChannelInfo = ({state}, channelId) => {
 };
 
 export const getPlaylistsInfo = ({state}, {playlistId, channelId}) => {
-   if(env.fake_results) {
+   if(isFakeResults == 'true') {
       let data = playlistInfoResponse;
       console.log(data[channelId].items)
       console.log(playlistId)

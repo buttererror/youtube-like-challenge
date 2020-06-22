@@ -1,0 +1,22 @@
+.image {
+  width: 100%;
+  height: 100%;
+  @media (max-width: $breakpoint-mobile) and (min-width: $breakpoint-small) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.image-channel {
+  border-radius: 50%;
+  width: 60%;
+  height: 100%;
+  @media (max-width: $breakpoint-small) {
+    width: 130px;
+    height: 130px;
+  }
+  @media (max-width: $breakpoint-mobile) and (min-width: $breakpoint-small) {
+    height: 85%;
+    width: 75%;
+  }
+}

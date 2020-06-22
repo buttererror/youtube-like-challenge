@@ -1,14 +1,14 @@
 <template>
-     <div class="result" v-if="item.id.kind === 'youtube#video' && videosInfo.hasOwnProperty(item.id.videoId)">
-          <div class="result__img">
-               <img :src="item.snippet.thumbnails.medium.url" class="result__image--video">
-               <p>{{videosInfo[item.id.videoId].items[0].contentDetails.duration | formatDuration}}</p>
+     <div class="card" v-if="item.id.kind === 'youtube#video' && videosInfo.hasOwnProperty(item.id.videoId)">
+          <div class="card__img">
+               <img :src="item.snippet.thumbnails.medium.url" class="image image-video">
+               <p class="overlay overlay-time">{{videosInfo[item.id.videoId].items[0].contentDetails.duration | formatDuration}}</p>
 
           </div>
-          <div class="result__info">
-               <h1 class="result__info__title" v-html="item.snippet.title">
+          <div class="card__info">
+               <h1 class="card__title" v-html="item.snippet.title">
                </h1>
-               <div class="result__info__subtitle">
+               <div class="card__subtitle">
                     <p class="align-content">
                          {{videosInfo[item.id.videoId].items[0].snippet.channelTitle}}</p>
                     <div class="dot-separator" v-if="windowWidth > 630">&#8226;</div>
@@ -18,50 +18,48 @@
                     <p class="align-content" v-if="windowWidth > 630">{{videosInfo[item.id.videoId].items[0].snippet.publishedAt |
                          publishPeriod}}</p>
                </div>
-               <div class="result__info__description">
+               <div class="card__description">
                     <p>{{item.snippet.description}}</p>
                </div>
           </div>
 
      </div>
-     <div class="result" v-else-if="item.id.kind === 'youtube#channel' && channelsInfo.hasOwnProperty(item.id.channelId)">
-          <div class="result__img">
-               <img :src="item.snippet.thumbnails.medium.url" class="result__image--channel" height="180">
+     <div class="card" v-else-if="item.id.kind === 'youtube#channel' && channelsInfo.hasOwnProperty(item.id.channelId)">
+          <div class="card__img">
+               <img :src="item.snippet.thumbnails.medium.url" class="image image-channel" height="180">
           </div>
-          <div class="result__info">
-               <h1 class="result__info__title"  v-html="item.snippet.title">
+          <div class="card__info">
+               <h1 class="card__title"  v-html="item.snippet.title">
                </h1>
-               <div class="result__info__subtitle">
+               <div class="card__subtitle">
                     <p class="align-content">
                          {{channelsInfo[item.id.channelId].items[0].statistics.subscriberCount | changeCountExpression}} subscribers
                     </p>
                     <div class="dot-separator" v-if="windowWidth > 630">&#8226;</div>
                </div>
-               <div class="result__info__description" v-if="windowWidth > 630">
+               <div class="card__description" v-if="windowWidth > 630">
                     <p>{{item.snippet.description}}</p>
                </div>
           </div>
      </div>
-     <div class="result" v-else-if="item.id.kind === 'youtube#playlist' && playlistsInfo.hasOwnProperty(item.id.playlistId)">
-          <div class="result__img">
-               <img :src="item.snippet.thumbnails.medium.url" class="result__image--playlist" height="180">
-               <div class="result__image__overlay">
-               </div>
-               <div class="result__image__playlist-icon">
-                    <span>{{playlistsInfo[item.id.playlistId].contentDetails.itemCount}}</span>
-                    <span><i class="material-icons">playlist_play</i></span>
+     <div class="card" v-else-if="item.id.kind === 'youtube#playlist' && playlistsInfo.hasOwnProperty(item.id.playlistId)">
+          <div class="card__img">
+               <img :src="item.snippet.thumbnails.medium.url" class="image image-playlist" height="180">
+               <div class="overlay overlay-halfWidth">
+                    <span class="overlay__item">{{playlistsInfo[item.id.playlistId].contentDetails.itemCount}}</span>
+                    <span><i class="overlay__item overlay__icon material-icons">playlist_play</i></span>
                </div>
           </div>
-          <div class="result__info">
-               <h1 class="result__info__title"  v-html="item.snippet.title">
+          <div class="card__info">
+               <h1 class="card__title"  v-html="item.snippet.title">
                </h1>
-               <div class="result__info__subtitle">
+               <div class="card__subtitle">
                     <p class="align-content">
                          {{playlistsInfo[item.id.playlistId].snippet.channelTitle | changeCountExpression}} subscribers
                     </p>
                     <div class="dot-separator" v-if="windowWidth > 630">&#8226;</div>
                </div>
-               <div class="result__info__description" v-if="windowWidth > 630">
+               <div class="card__description" v-if="windowWidth > 630">
                     <p>{{item.snippet.description}}</p>
                </div>
           </div>

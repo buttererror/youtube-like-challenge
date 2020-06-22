@@ -4,8 +4,9 @@
 ```
 npm install
 ```
-* Add env.js with env.js.example content
-* Modify the value of fake_results in env.js to false value to make live requests to the youTube api.
+* copy .env.example to .env
+* .env `VUE_APP_FAKE_RESULTS` key to use static data or not, the key has a `true` or `false` values to switch between. 
+* .env `VUE_APP_YOUTUBE_API_KEY` value attached to the e-mail, please look it up.  
 
 
 ### Compiles and hot-reloads for development
@@ -20,9 +21,4 @@ npm run build
 
 ### Notes
 
-* The results is not clickable as it's not one of the required tasks.
-* The results returned from the api is limited to 25 results, there's no load more results.
-* Mobile filters, I chose to do it as same as desktop.
-* Due to limited time given work and studies, I didn't use `Flux Arch`.
-* Of course to reach with the ui exactly the same as the given photos, time needed.
- 
+* `FAKE_RESULTS` has been used due to limited api requests 

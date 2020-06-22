@@ -1,0 +1,15 @@
+@import "~nprogress/nprogress.css";
+@import "variables";
+@import "mixins";
+@import "utils";
+@import "base";
+@import "layout";
+@import "modules";
+@import "state";
+//@import "header";
+//@import "header-media";
+
+
+#nprogress .bar {
+  background: $red-color !important;
+}

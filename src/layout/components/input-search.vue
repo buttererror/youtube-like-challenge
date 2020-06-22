@@ -1,16 +1,16 @@
 <template>
-     <div class="heading__input-container">
-          <input type="text" :class="{'heading__input': true, 'heading__input--show': displayInput}"
+     <div class="input-search">
+          <input type="text" :class="{'input': true, 'input-is-visible': displayInput}"
                  v-model="searchQuery" @keyup.enter="search">
-          <span :class="{'heading__input--show': displayInput, 'close': true}">
+          <span :class="{'icon-is-visible': displayInput, 'input-search__icon': true}">
                <a href="#" @click.prevent="displayInput = false"><i class="material-icons">close</i></a>
           </span>
           <button v-if="windowWidth > 630"
-                  class="heading__input__button--desktop"
+                  class="button"
                   @click.prevent="search"><i class="material-icons">
                search</i>
           </button>
-          <button v-else class="heading__input__button--mobile" @click.prevent="displayInput = true">
+          <button v-else class="button-mobile" @click.prevent="displayInput = true">
                <i class="material-icons">search</i>
           </button>
      </div>

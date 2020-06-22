@@ -1,0 +1,100 @@
+.card {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  height: 180px;
+
+  &__img {
+    min-width: 320px;
+    position: relative;
+  }
+
+  &__info {
+    //width: 25%;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+  }
+
+  &__title {
+    text-align: left;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  &__description {
+    display: initial;
+    color: grey;
+    text-align: left;
+    font-weight: 200;
+  }
+
+  &__subtitle {
+    display: flex;
+    font-size: 13px;
+    margin-top: 2px;
+    color: grey;
+
+  }
+}
+
+.card-vertical {
+  flex-direction: column;
+  transform: translateX(50%);
+  width: 50%;
+  height: 100%;
+}
+
+.card-horizontal {
+
+}
+
+@media (max-width: $breakpoint-small) {
+  .card {
+    height: 140px;
+    @include mobile-width;
+    &__img {
+      min-width: 170px;
+      width: 50%;
+      height: 130px;
+    }
+    &__title {
+      font-size: 13px;
+    }
+    &__description {
+      display: none;
+    }
+    &__subtitle {
+      font-size: 10px;
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) and (min-width: $breakpoint-small) {
+  .card {
+    height: 140px;
+    @include mobile-width;
+    &__img {
+      min-width: 220px;
+    }
+    &__title {
+      font-size: 15px;
+    }
+    &__description {
+      display: none;
+    }
+    &__subtitle {
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+}
+
+
+

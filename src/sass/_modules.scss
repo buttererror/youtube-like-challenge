@@ -1,0 +1,41 @@
+@import "modules/overflow";
+@import "modules/card";
+@import "modules/image";
+@import "modules/button";
+@import "modules/input";
+
+.megaBar {
+  display: flex;
+  width: 50%;
+  transform: translateX(50%);
+}
+
+.logo-web {
+  width: 80px;
+  height: 24px;
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+  margin: auto 0;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .logo-web {
+    display: none;
+  }
+  .logo-mobile {
+    display: block;
+    width: 100px;
+    height: 60px;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .megaBar {
+    @include mobile-width;
+  }
+}

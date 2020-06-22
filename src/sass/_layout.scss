@@ -1,0 +1,43 @@
+.l-content {
+  background-color: transparent;
+  margin-top: 65px;
+  min-height: 100vh;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .l-contentHeader, .l-content {
+    @include mobile-width;
+  }
+  .l-content {
+    background-color: $white-color;
+    margin-top: 0;
+  }
+}
+
+.l-contentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 19px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ded9d9;
+}
+
+.l-header {
+  z-index: 2;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: $white-color;
+  top: 0;
+  right: 0;
+  opacity: .9;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .l-header {
+    position: relative;
+    background-color: $red-color;
+    width: 96%;
+    transform: translateX(2%);
+  }
+}

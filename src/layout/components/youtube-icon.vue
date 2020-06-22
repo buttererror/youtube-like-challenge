@@ -1,5 +1,5 @@
 <template>
-     <div class="heading__icon__container">
+     <div class="logo-mobile">
           <svg viewBox="0 0 100 60" preserveAspectRatio="xMidYMid meet" focusable="false"
                style="pointer-events: none; display: block; width: 100%; height: 100%;">
                <g viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
